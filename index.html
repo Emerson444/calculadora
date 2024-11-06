@@ -3,54 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculadora</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="calculator">
+    <div>
+        <h1>Calculadora</h1>
+        <input type="number" placeholder="numero1" id="num1">
+        <br>
+        <input type="number" id="num2" placeholder="numero2">
+        <br>
+        <button id="som">+</button>
+        <button id="sub">-</button>
+        <button id="div">/</button> <!-- Corrigido para usar a operação de divisão correta -->
+        <button id="mult">*</button>
+        <input type="number" id="res" readonly>
+    </div>
+    <script>
+        var n1 = document.getElementById("num1");
+        var n2 = document.getElementById("num2");
+        var res = document.getElementById("res");
 
-					<table>
-						<tr>
-							<td colspan="4">
-								<input type="text" id="display" readonly>
-							</td>
-						</tr>
-						<tr>
-							<td><button class="calculatorButtons" id="cleanDisplay" value="C">APAGA AI</td>
-							<td><button class="calculatorButtons" id="deleteDigit" value="CE">CE</td>
-							<td><button class="calculatorButtons" id="division" value="/">&divide;</td>
-							<td><button class="calculatorButtons" id="multiplication" value="*">&times;</td>
-						</tr>
-						<tr>
-							<td><button class="calculatorButtons" id="num7" value="7">7</td>
-							<td><button class="calculatorButtons" id="num8" value="8">8</td>
-							<td><button class="calculatorButtons" id="num9" value="9">9</td>
-							<td><button class="calculatorButtons" id="subtraction" value="-">-</td>
-						</tr>
-						<tr>
-							<td><button class="calculatorButtons" id="num4" value="4">4</td>
-							<td><button class="calculatorButtons" id="num5" value="5">5</td>
-							<td><button class="calculatorButtons" id="num6" value="6">6</td>
-							<td><button class="calculatorButtons" id="sum" value="+">+</td>
-							
-						</tr>
-						<tr>
-							<td><button class="calculatorButtons" id="num1" value="1">1</td>
-							<td><button class="calculatorButtons" id="num2" value="2">2</td>
-							<td><button class="calculatorButtons" id="num3" value="3">3</td>
-							<td rowspan="2"><button class="calculatorButtons" id="result" value="=">=</td>
-							
-						</tr>
-						<tr>
-							<td colspan="2"><button class="calculatorButtons" id="num0" value="0">0</td>
-							<td><button class="calculatorButtons" id="point" value=".">.</td>
-							
-							
-						</tr>
-					</table>
-				</div>
+        document.getElementById("som").addEventListener("click", function(){
+            res.value = parseFloat(n1.value) + parseFloat(n2.value); // Usando parseFloat para permitir decimais
+        });
 
+        document.getElementById("sub").addEventListener("click", function(){
+            res.value = parseFloat(n1.value) - parseFloat(n2.value);
+        });
 
-    <script src="script.js"></script>
+        document.getElementById("div").addEventListener("click", function(){ // Corrigido aqui
+            if (parseFloat(n2.value) !== 0) { // Verifica se o divisor não é zero
+                res.value = parseFloat(n1.value) / parseFloat(n2.value);
+            } else {
+                res.value = "Erro: Divisão por zero"; // Mensagem de erro
+            }
+        });
+
+        document.getElementById("mult").addEventListener("click", function(){
+            res.value = parseFloat(n1.value) * parseFloat(n2.value);
+        });
+    </script>
 </body>
 </html>

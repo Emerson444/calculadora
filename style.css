@@ -1,54 +1,29 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #3f413d;
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  .calculator{
-    display: flex;
-    justify-content: center;
-    padding: 3vh 3vh 3vh 3vh;
-    border-radius: 1rem;
-  }
-  
-  #display {
-    background-color: #fdf8fd;
-    padding: 15px;
-    border-radius: 0.5rem;
-    text-align: right;
-    height: 5vh;
-    margin: 0.5rem;
-  }
-  
-  .calculatorButtons{
-    width: 4rem;
-    height: 3rem;
-    border: none;
-    margin: 0.3rem;
-    border-radius: 0.5rem;
-    background-color: #817b83;
-    box-shadow: 0 4px #cac5b6;
-    text-align: center;
-  }
-  
-  .calculatorButtons:active {
-    transform: translateY(0.1vh);
-    box-shadow: 0 2px #fabb00;
-  }
-  
-  #cleanDisplay, #deleteDigit, #division, #multiplication, #subtraction, #sum, #result{
-    background-color: #928686;
-    color: #000000;
-  }
-  
-  #result{
-    height: 6.8rem;
-  }
-  
-  #num0{
-    width: 8.7rem;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div{
+  text-align: center;
+}
+
+div h1{
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+div button{
+  margin: 0px 4px;
+  width: 62px;
+  font-size: 16px;
+}
+
+
